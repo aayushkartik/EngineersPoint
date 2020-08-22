@@ -1,0 +1,79 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+
+.ques{
+    margin: 12px auto ! important;
+}
+body{
+    padding-top: 90px;
+   background-color: #f1f1f1;
+   height: 100vh;
+}
+.navbar-brand{
+    font-weight: bolder;
+    font-family: 'Megrim', cursive;
+    color: aquamarine;
+    margin: calc(4.5px + (4.5 - 4) * ((100vw - 300px) / (1100 - 300)));
+    margin-left: calc(20px + (35 - 20) * ((100vw - 300px) / (1100 - 300)));
+    font-size: calc(27px + (34 - 27) * ((100vw - 300px) / (1100 - 300))) ! important;
+}
+.nav-item{
+    font-family: "montserrat";
+    margin-left: 15px;
+    font-weight: bolder;
+}
+.nav-item:hover{
+    border-bottom: solid red;
+}
+.username{
+    font-family: 'Poppins';
+    text-align: center;
+    font-size: calc(50px + (80 - 50) * ((100vw - 300px) / (1100 - 300)));
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    color: #ff7675 ;
+}
+.yourques{
+    font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1100 - 300)));
+    margin-top: 50px;
+    text-align: center;
+    color: #ff7675 ;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.recentques{
+  
+    /* font-family: 'Poppins', sans-serif; */
+    background-color:  #fafafa
+   ;
+    height: 33vh;
+    width: 100%;
+    margin: 13px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.4s;
+
+}
+.recentques:hover{
+    transform: scale(1.02);
+    background-color:  #f6f6f6;
+}
+.contentsofbox{
+     font-family: 'Poppins', sans-serif;
+     font-size: calc(24px + (28 - 24) * ((100vw - 300px) / (1100 - 300)));
+     font-weight: bold;
+     margin: 10px;
+     color: #576574;
+}
+.askedby{
+    margin: 10px;
+    font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1100 - 300)));
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    color: black;
+}

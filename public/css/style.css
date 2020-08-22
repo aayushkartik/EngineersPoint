@@ -1,0 +1,223 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+.frontchart{
+    width: 100%;
+    height: 72vh;
+    background-image: url(/imsges/eng.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ques{
+    margin: 12px auto ! important;
+}
+
+.searchmet h1 {
+    font-size: 3.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 10px;
+    color: #f5f6fa;
+    /* color: #b71540; */
+    font-size: calc(40px + (55 - 40) * ((100vw - 300px) / (1100 - 300)));
+}
+.searchmet{
+    text-align: center;
+}
+.searchmet input{
+    width: 80%;
+    padding: 7px;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.second{
+    text-align: left;
+}
+body{
+    /* padding-top: 70px; */
+   background-color: #f1f1f1;
+   height: 100vh;
+   background-color: white;
+   /* display: flex;
+   flex-direction: column; */
+}
+.navbar-brand{
+    font-weight: bolder;
+    font-family: 'Megrim', cursive;
+    color: aquamarine;
+    margin: calc(4.5px + (4.5 - 4) * ((100vw - 300px) / (1100 - 300)));
+    margin-left: calc(20px + (35 - 20) * ((100vw - 300px) / (1100 - 300)));
+    font-size: calc(27px + (34 - 27) * ((100vw - 300px) / (1100 - 300))) ! important;
+}
+
+.nav-item{
+    font-family: "montserrat";
+    margin-left: 15px;
+    font-weight: bolder;
+
+}
+
+.nav-item:hover{
+    border-bottom: solid red;
+}
+.bb{
+    margin-top: 10px;
+    padding: 5px 30px;
+    border: 2.5px solid white;
+    border-radius: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    background-color: #ff7675;
+    font-weight: bold;
+    transition: 0.4s;
+}
+.bb:hover{
+    background-color: white;
+    color: #ff7675;
+}
+
+.loginbox{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentslogin{
+    width: calc(320px + (350 - 320) * ((100vw - 300px) / (1100 - 300)));
+    height: calc(470px + (490 - 470) * ((100vw - 300px) / (1100 - 300)));
+    background-color: #f5f6fa;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+}
+.link{
+    position: relative;
+    margin-left: 10px;
+}
+/* .styleform{
+    margin: 30px;
+} */
+.contentslogin h1{
+    margin-top: 10%;
+    font-size: 3rem;
+    /* font-weight: 200; */
+}
+.loginbox hr{
+    width: 80%;
+    margin:auto ;
+    padding: 1px;
+    background: #010101;
+    border: none;
+    margin-bottom: 4%;
+    position: relative;
+}
+
+
+
+
+.inp{
+    display: block;
+    margin: 15px auto;
+    margin-bottom: 2px;
+    width: 90%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 12px 0px;
+   border: none;
+   background-color:#dcdde1;
+}
+
+
+
+
+.submitbutton{
+    padding: 1.8% 6%;
+    margin-bottom: 10px ;
+    width: 80%;
+    border-radius: 10px;
+    font-size: larger;
+    border: 1.5px solid#2ecc71;
+    background-color: white;
+    color: #2ecc71;
+    transition: 0.5s;
+    /* margin-bottom: 5%; */
+}
+.submitbutton:hover{
+    background-color: #2ecc71;
+    color: white;
+}
+.cccc{
+    width: 60%;
+    /* height: 10vh; */
+    margin-top: 10px;
+    transition: 0.4s;
+}
+.cccc:hover{
+    transform: scale(1.02);
+}
+.cross{
+    position: absolute;
+    top: 2;
+    right: 18px;
+    border: none;
+    background-color: white;
+    font-size: large;
+    
+}
+.questionask{
+    font-family: 'Poppins', sans-serif;
+    color: #b71540 ;
+    text-align: center;
+    margin: 20px auto;
+    margin-bottom: 30px;
+    font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1100 - 300)));
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.recentques{
+  
+    /* font-family: 'Poppins', sans-serif; */
+    background-color:  #fafafa
+   ;
+    height: 33vh;
+    width: 100%;
+    margin: 13px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.4s;
+
+}
+.recentques:hover{
+    transform: scale(1.02);
+    background-color:  #f6f6f6;
+}
+.contentsofbox{
+     font-family: 'Poppins', sans-serif;
+     font-size: calc(24px + (28 - 24) * ((100vw - 300px) / (1100 - 300)));
+     font-weight: bold;
+     margin: 10px;
+     color: #576574;
+}
+.askedby{
+    margin: 10px;
+    font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1100 - 300)));
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    color: black;
+}

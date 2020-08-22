@@ -1,0 +1,19 @@
+<%- include('headerforaskandtemplate'); -%>
+    <h1 class='QuesTitle'><%= question %></h1>
+    <h3 class='recentAns'> Recent Answers</h3>
+    <form action="/postanswer" method="POST">
+        <% answers.forEach(function(answer){ %>
+            <div class="container-fluid">
+                <div class="ansFromUser">
+                    <h5 class="ansss"> Answered by : <%= answer.name %></h5>
+                    <h6 class="ansss"><%= answer.body %></h6>
+                 </div>
+                </div>
+        <% }); %>
+        <hr>
+        <textarea name="ans" id="ques" cols="140" rows="13" class='textarea2'required></textarea>
+        <!-- <input type="text"> --><br>
+        <button type="submit" class='postbutton' name='idbutton' value=<%= ids %> >Post</button>
+    </form>
+</body>
+</html>
