@@ -47,13 +47,14 @@ body{
    background-color:#dcdde1;
 }
 .submitbutton{
-    padding: 1.8% 6%;
+    padding: 1.8% 5%;
+    margin-top: 0;
     margin-bottom: 10px ;
-    width: 80%;
+    width: 50%;
     font-family: "Poppins";
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: larger;
-    border: 2px solid#2ecc71;
+    border: 2.3px solid#2ecc71;
     background-color: white;
     color: #2ecc71;
     transition: 0.5s;
@@ -107,15 +108,19 @@ h6{
     margin-bottom: 5vh;
 }
 .tbox{
-    width: 260px;
+    width: calc(260px + (360 - 260) * ((100vw - 300px) / (1100 - 300)));
     height: 40px;
-    /* box-shadow: 1.2px 1.5px 4px black; */
     background-color: white;
     border-radius: 7px;
-    margin: 15px auto;
+    margin: 30% auto;
+    margin-bottom: 1%;
     opacity: 100%;
 }
-
+span{
+    color: red;
+    font-size: large;
+    margin-bottom: 3% ;
+}
 .tbox input{
     border: none;
     background: none;
@@ -124,7 +129,5 @@ h6{
     width: 70%;
     line-height: 37px;
     font-family: 'Poppins';
-    /* font-weight: bold; */
     font-weight: 4px;
-    /* color: black; */
 }

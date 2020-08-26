@@ -3,6 +3,7 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const mongoose = require("mongoose");
 const passport = require("passport");
+const crypto = require("crypto");
 const passportLocalMongoose  = require("passport-local-mongoose");
 const session = require("express-session");
 const ejs = require("ejs");
@@ -25,7 +26,7 @@ app.use(passport.session());
 
 const DB = process.env.DATABASE.replace('<PASSWORD>' , process.env.DATABASE_PASS);
 
-mongoose.connect(DB||'mongodb://localhost:27017/UserDB', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/UserDB', {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set("useCreateIndex",true);
 const questionSchema= new mongoose.Schema({
   userPostedID:String,
@@ -38,6 +39,8 @@ const userSchema= new mongoose.Schema({
     name: String,
     resetToken: String,
     question: [questionSchema],
+    resetToken:String,
+    expirytime:Date,
 }) ;
 
 userSchema.plugin(passportLocalMongoose);
@@ -147,9 +150,7 @@ app.post("/register",function(req,res){
     }
     else{
       passport.authenticate('local')(req,res, function(){
-        sendmail({
-          email: req.user.username,
-        });
+
         res.redirect("/secret");
       });
     }
@@ -177,11 +178,57 @@ app.get("/logout", function(req,res){
 });
 ////////////////////////////////////////////////////////////////
 
-//THIS BLOCK HANDLE THE SEARCH QUERY OF CUSTOMER
-// app.get("/search", function(req,res){
-//   res.render("search");
-// })
 
+app.get("/resetpassword", function(req,res){
+ res.render("reset",{err:''});
+});
+
+app.post("/resetpassword", function(req,res){
+  const email= req.body.EMAIL;
+  const reset = crypto.randomBytes(32).toString('hex');
+  const message = 'Please copy this link to browser to rest your password '+ req.protocol+'://'+req.hostname+':'+port+'/reset/'+reset+'   '+'link is valid for 15minutes';
+  User.findOne({username:email}, function(err,found){
+    if(found===null){
+      res.render("reset",{err:"Email Id not found please trying again"});
+    }
+    else{
+    found.resetToken= crypto.createHash('sha256').update(reset).digest('hex');
+    found.expirytime = Date.now()+15*60*1000;
+    found.save();
+    sendmail({
+      Email:email,
+      BODY:message,
+    });
+    res.render("sendsuccessful",{mail:email});
+  }
+  });
+});
+
+app.get("/reset/:token", function(req,res){
+  const checkingTokens = crypto.createHash('sha256').update(req.params.token).digest('hex');
+  User.findOne({resetToken:checkingTokens}, function(err,userfound){
+    res.render('passwordwindow',{userid:userfound.id});
+  });
+ });
+
+ app.post("/resetpass", function(req,res){
+  const PASS =req.body.newpass;
+  User.findOne({id:req.body.name, expirytime: { $gt: Date.now()}}, function(err,user){
+    if(!user){
+      res.render("passwordwindow");
+    }
+    else{
+              user.setPassword(PASS, function(){
+              user.resetToken = undefined;
+              user.expirytime = undefined;
+              user.save(function(err){
+              console.log(err);
+                res.redirect("/secret");
+        });
+    });
+  }
+  });
+ });
 app.post("/askquestion" , function(req,res){
   const abcd = _.lowerCase(req.body.ques)+'?';
   userQuestions.find({recentQuestion:abcd},function(err, got){
@@ -224,8 +271,9 @@ app.post("/postanswer", function(req,res){
       }
       else{
         founduser.answers.push({body:ANS, name:req.user.name});
+        
         founduser.save(function(){
-          res.redirect('/question/'+req.body.idbutton);
+          res.redirect('/question/'+founduser.recentQuestion);
         });
       }
     });
