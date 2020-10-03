@@ -1,0 +1,86 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    padding-top: 100px;
+   background-color: #f1f1f1;
+   height: 100vh;
+   background-color: white;
+   /* display: flex;
+   flex-direction: column; */
+}
+.navbar-brand{
+    font-weight: bolder;
+    font-family: 'Megrim', cursive;
+    color: aquamarine;
+    margin: calc(4.5px + (4.5 - 4) * ((100vw - 300px) / (1100 - 300)));
+    margin-left: calc(20px + (35 - 20) * ((100vw - 300px) / (1100 - 300)));
+    font-size: calc(27px + (34 - 27) * ((100vw - 300px) / (1100 - 300))) ! important;
+}
+.questionask{
+    font-family: 'Poppins', sans-serif;
+    color: #ff7675 ;
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 40px;
+    font-size: calc(50px + (80 - 50) * ((100vw - 300px) / (1100 - 300)));
+}
+textarea{
+    margin: 40px;
+    margin-bottom: 0;
+    border: 1px solid #ff7675;
+    width: 80%;
+}
+.textarea2{
+    margin: 50px;
+    margin-bottom: 0;
+    border: 1px solid #ff7675;
+    width: 80%;
+}
+.postbutton{
+    margin: 20px 50px;
+    padding: 10px 40px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    border: 2.3px solid #ff7675;
+    background-color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #ff7675;
+}
+.QuesTitle{
+    font-family: 'Poppins', sans-serif;
+    color: #b71540 ;
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 40px;
+    font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1100 - 300)));
+   font-weight: bold;
+}
+.ansFromUser{
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 35px;
+    margin-right: calc(10px + (40 - 10) * ((100vw - 300px) / (1100 - 300)));
+    font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1100 - 300)));
+    background-color:  #fafafa;
+    padding: 20px;
+}
+.ansss{
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.recentAns{
+    font-family: 'Poppins', sans-serif;
+    color: #757575 ;
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 45px;
+    font-size: calc(23px + (35 - 23) * ((100vw - 300px) / (1100 - 300)));
+   /* font-weight: bold; */
+}
+h5{
+    font-weight: bold;
+    font-family: 'Didact Gothic', sans-serif;
+}
