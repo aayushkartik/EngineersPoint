@@ -6,7 +6,10 @@
             <div class="container-fluid">
                 <div class="ansFromUser">
                     <h5 class="ansss"> Answered by : <%= answer.name %></h5>
-                    <h6 class="ansss"><%= answer.body %></h6>
+                    <h6 class="ansss" >
+                        <pre>
+                        <%= answer.body %>
+                    </pre></h6>
                  </div>
                 </div>
         <% }); %>
