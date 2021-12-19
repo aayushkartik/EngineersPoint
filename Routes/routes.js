@@ -12,7 +12,7 @@ router.get("/", function(req,res){
    }
    else{
      userQuestions.find({}, function(err, result){
-       res.render("index",{ hello:result});
+       res.render("index",{ hello:result, name:"none", loginCheck:0});
      });
    }
  });
@@ -31,7 +31,7 @@ router.get('/auth/google/secret',
 router.get("/secret", function(req,res){
   if(req.isAuthenticated()){
     userQuestions.find({}, function(err, result){
-      res.render("secret",{name:req.user.name, hello:result});
+      res.render("index",{name:req.user.name, hello:result, loginCheck:1});
     });
   }
   else{

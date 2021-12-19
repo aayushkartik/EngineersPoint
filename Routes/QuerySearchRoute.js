@@ -7,10 +7,10 @@ const userQuestions = QueSchemaInput.userQue; //MODEL OF THE  QUESTIONSCHEMA
 router.post("/searchquery" , function(req,res){
     userQuestions.find({ recentQuestion: { $regex: req.body.questionn } }, function(err, docs) {
       if(req.isAuthenticated()){
-          res.render("searchprofile",{name:req.user.name, hello:docs});
+          res.render("search",{name:req.user.name, hello:docs, loginCheck:1});
       }
       else{
-        res.render("search",{ hello:docs});
+        res.render("search",{name:"none", hello:docs, loginCheck:0});
       }
         });
     });
